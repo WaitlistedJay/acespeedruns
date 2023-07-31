@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guides</title>
+  <link rel="icon" href="https://media.printables.com/media/prints/147688/images/1390622_94f186c1-3fdd-4623-bb19-66928e20f68f/thumbs/inside/1280x960/png/attorneysbadge.webp" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://media.printables.com/media/prints/147688/images/1390622_94f186c1-3fdd-4623-bb19-66928e20f68f/thumbs/inside/1280x960/png/attorneysbadge.webp">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" sizes="192x192" href="https://media.printables.com/media/prints/147688/images/1390622_94f186c1-3fdd-4623-bb19-66928e20f68f/thumbs/inside/1280x960/png/attorneysbadge.webp">
+  <meta name="msapplication-TileImage" content="https://media.printables.com/media/prints/147688/images/1390622_94f186c1-3fdd-4623-bb19-66928e20f68f/thumbs/inside/1280x960/png/attorneysbadge.webp">
+  <meta name="msapplication-TileColor" content="#000000">
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  <style>
+    body {
+      background-size: cover;
+      background-position: center;
+      background-repeat: repeat;
+      margin: 0;
+    }
+
+    .top-bar {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 5px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar h1 {
+      margin: 0;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-bar img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      display: none;
+    }
+
+    .theme-switch {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .theme-switch input[type="radio"] {
+      display: none;
+    }
+
+    .theme-switch label {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      font-size: 14px;
+    }
+
+    .theme-switch label:hover {
+      background-color: white;
+      color: black;
+    }
+
+    /* White theme buttons */
+    body.white-theme .theme-switch label {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+    }
+
+    body.white-theme .theme-switch label:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .theme-switch input[type="radio"]:checked + label {
+      background-color: white;
+      color: black;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin-right: 5px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid white;
+      border-radius: 5px;
+      display: block;
+    }
+
+    /* Default background image */
+    body.default-theme {
+      background-image: url("https://media.discordapp.net/attachments/620257660121514005/1135405967056588830/IMG_3949.jpg?width=1138&height=663"); 
+      background-size: cover;
+      background-repeat: repeat;
+      background-position: center;
+      color: white;
+    }
+
+    /* White theme */
+    body.white-theme {
+      background-color: #ffffff;
+      color: black;
+    }
+
+    /* Black theme */
+    body.black-theme {
+      background-color: #000000;
+      color: white;
+    }
+
+    /* Remove background image for white theme */
+    body.white-theme {
+      background-image: none;
+    }
+
+    /* Remove background image for black theme */
+    body.black-theme {
+      background-image: none;
+    }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        padding: 5px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hamburger {
+        display: block;
+        font-size: 24px;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      /* Center theme buttons on smaller screens */
+      .theme-switch {
+        justify-content: center;
+      }
+
+      /* Images for smaller screens */
+      .stackedit__html img {
+        max-width: 100%;
+      }
+    }
+
+    /* Images for larger screens */
+    @media (min-width: 769px) {
+      .stackedit__html img {
+        max-width: 48%;
+        margin: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body class="stackedit default-theme">
+  <div class="top-bar">
+    <h1>
+      <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135356076389314630/0F3DA5DD-01F9-416B-BE9B-2CF39C4E1D0D.jpg" alt="Ace Speedruns Logo">
+      Ace Speedruns
+    </h1>
+    <div class="hamburger">&#9776;</div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="https://www.speedrun.com/series/ace_attorney" target="_blank">SRC</a></li>
+        <li><a href="https://discord.gg/xKWQnJBdWv" target="_blank">Discord</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="theme-switch">
+    <input type="radio" name="theme" id="default-theme" checked>
+    <label for="default-theme">Default</label>
+
+    <input type="radio" name="theme" id="white-theme">
+    <label for="white-theme">White</label>
+
+    <input type="radio" name="theme" id="black-theme">
+    <label for="black-theme">Black</label>
+  </div>
+
+  <div class="stackedit__html">
+    <h1 id="guides">Guides</h1>
+    <p>This page will direct you to the guides we have in place for each game. Please click on a game to view the available guides.</p>
+    <p>
+      <!-- Link each image to the corresponding section on the website -->
+      <a href="/guides/pwaa">
+        <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135379468572176514/IMG_3929.png" alt="PWAA">
+      </a>
+      <a href="/guides/jfa">
+        <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135379468895125514/IMG_3928.jpg" alt="enter image description here">
+      </a><br>
+      <a href="/guides/tat">
+        <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135379469427814450/IMG_3927.jpg" alt="enter image description here">
+      </a>
+      <a href="/guides/ajaa">
+        <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135379469826261172/IMG_3930.png" alt="enter image description here">
+      </a><br>
+      <a href="/guides/aai">
+        <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135379470182789161/IMG_3931.jpg" alt="enter image description here">
+      </a>
+      <a href="/guides/gk2">
+        <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135379470497349752/IMG_3932.jpg" alt="enter image description here">
+      </a><br>
+      <a href="/guides/dd">
+        <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135379471218782208/IMG_3934.png" alt="enter image description here">
+      </a>
+      <a href="/guides/dgs">
+        <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135379471587872788/IMG_3935.jpg" alt="enter image description here">
+      </a><br>
+      <a href="/guides/soj">
+        <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135379470845481041/IMG_3933.jpg" alt="enter image description here">
+      </a>
+      <a href="/guides/dgs2">
+        <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135379471910842449/IMG_3936.png" alt="enter image description here">
+      </a>
+    </p>
+    <p>If you are looking for the Layton spinoff game, check the games page on <a href="http://speedrun.com">speedrun.com</a>.</p>
+  </div>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navList = document.querySelector("nav");
+    const defaultTheme = document.getElementById("default-theme");
+    const whiteTheme = document.getElementById("white-theme");
+    const blackTheme = document.getElementById("black-theme");
+
+    // Function to set the theme class on the body element
+    function setTheme(theme) {
+      document.body.className = `stackedit ${theme}-theme`;
+      localStorage.setItem("theme", theme); // Store the selected theme in local storage
+    }
+
+    hamburger.addEventListener("click", () => {
+      navList.classList.toggle("show");
+    });
+
+    // Hide the navigation bar when a link is clicked
+    const navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navList.classList.remove("show");
+      });
+    });
+
+    // Handle theme switch change
+    defaultTheme.addEventListener("change", () => {
+      setTheme("default");
+    });
+
+    whiteTheme.addEventListener("change", () => {
+      setTheme("white");
+    });
+
+    blackTheme.addEventListener("change", () => {
+      setTheme("black");
+    });
+
+    // Retrieve the theme preference from local storage on page load
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  </script>
+</body>
+
+</html>
