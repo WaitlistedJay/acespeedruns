@@ -14,12 +14,27 @@
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
   <style>
     body {
-      background-image: url("https://media.discordapp.net/attachments/620257660121514005/1135405967056588830/IMG_3949.jpg?width=1138&height=663");
-      background-repeat: repeat;
-      background-size: cover;
-      background-position: center;
       margin: 0;
     }
+
+    .background-container {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .stackedit__html {
+      padding-top: 70px;
+      /* Add additional padding to the top to prevent content overlap with the top bar */
+    }
+
     .top-bar {
       background-color: rgba(0, 0, 0, 0.8);
       color: white;
@@ -28,28 +43,34 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .top-bar h1 {
       margin: 0;
       color: white;
       display: flex;
       align-items: center;
     }
+
     .top-bar img {
       height: 30px;
       margin-right: 10px;
     }
+
     .hamburger {
       cursor: pointer;
       display: none;
     }
+
     .theme-switch {
       display: flex;
       align-items: center;
       margin-top: 10px;
     }
+
     .theme-switch input[type="radio"] {
       display: none;
     }
+
     .theme-switch label {
       background-color: transparent;
       color: white;
@@ -61,16 +82,19 @@
       transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
       font-size: 14px;
     }
+
     .theme-switch label:hover {
       background-color: white;
       color: black;
     }
+
     /* White theme buttons */
     body.white-theme .theme-switch label {
       background-color: white;
       color: black;
       border: 2px solid black;
     }
+
     body.white-theme .theme-switch label:hover {
       background-color: black;
       color: white;
@@ -80,18 +104,22 @@
       background-color: white;
       color: black;
     }
+
     nav {
       display: flex;
     }
+
     nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
     }
+
     nav li {
       margin-right: 5px;
     }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -103,6 +131,8 @@
 
     /* Default background image */
     body.default-theme {
+      background-image: url("https://media.discordapp.net/attachments/620257660121514005/1135405967056588830/IMG_3949.jpg?width=1138&height=663");
+      background-color: #000000;
       color: white;
     }
 
@@ -110,31 +140,50 @@
     body.white-theme {
       background-color: #ffffff;
       color: black;
-      background-image: none; /* Remove background image */
     }
 
     /* Black theme */
     body.black-theme {
       background-color: #000000;
       color: white;
-      background-image: none; /* Remove background image */
     }
 
+    /* Remove background image for white theme */
+    body.white-theme .background-container {
+      background-image: none;
+    }
+
+    /* Remove background image for black theme */
+    body.black-theme .background-container {
+      background-image: none;
+    }
+
+    /* Update background for smaller screens to repeat */
     @media (max-width: 768px) {
+      .background-container {
+        background-repeat: repeat;
+        background-size: auto;
+        background-position: top;
+        background-attachment: scroll;
+      }
+
       .top-bar {
         padding: 5px;
         flex-direction: column;
         align-items: flex-start;
       }
+
       .hamburger {
         display: block;
         font-size: 24px;
       }
+
       nav {
         display: none;
         width: 100%;
         margin-top: 10px;
       }
+
       nav.show {
         display: flex;
       }
@@ -143,11 +192,26 @@
       .theme-switch {
         justify-content: center;
       }
+
+      /* Images for smaller screens */
+      .stackedit__html img {
+        max-width: 100%;
+      }
+    }
+
+    /* Images for larger screens */
+    @media (min-width: 769px) {
+      .stackedit__html img {
+        max-width: 70%; /* Change the size of the image */
+        display: block;
+        margin: 0 auto; /* Center the image horizontally */
+      }
     }
   </style>
 </head>
 
-<body class="stackedit">
+<body class="stackedit default-theme">
+  <div class="background-container"></div>
   <div class="top-bar">
     <h1>
       <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135356076389314630/0F3DA5DD-01F9-416B-BE9B-2CF39C4E1D0D.jpg" alt="Ace Speedruns Logo">
@@ -185,17 +249,26 @@
     <p>All leaderboards are located on <a href="https://www.speedrun.com">speedrun.com</a></p>
     <p>If you have any questions, the fastest way to contact staff is on our Discord server. You can find it by clicking the option on the navigation bar above.</p>
   </div>
+
   <script>
     const hamburger = document.querySelector(".hamburger");
     const navList = document.querySelector("nav");
     const defaultTheme = document.getElementById("default-theme");
     const whiteTheme = document.getElementById("white-theme");
     const blackTheme = document.getElementById("black-theme");
+    const backgroundContainer = document.querySelector(".background-container");
 
     // Function to set the theme class on the body element
     function setTheme(theme) {
       document.body.className = `stackedit ${theme}-theme`;
       localStorage.setItem("theme", theme); // Store the selected theme in local storage
+
+      // Update the background image based on the selected theme
+      if (theme === "default") {
+        backgroundContainer.style.backgroundImage = "url('https://media.discordapp.net/attachments/620257660121514005/1135405967056588830/IMG_3949.jpg?width=1138&height=663')";
+      } else {
+        backgroundContainer.style.backgroundImage = "none";
+      }
     }
 
     hamburger.addEventListener("click", () => {
@@ -223,12 +296,10 @@
       setTheme("black");
     });
 
-    // Check if the theme preference exists in local storage, otherwise set the default theme
+    // Retrieve the theme preference from local storage on page load
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme) {
       setTheme(storedTheme);
-    } else {
-      setTheme("default"); // Apply the default theme if no theme preference is found
     }
   </script>
 </body>

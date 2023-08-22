@@ -14,10 +14,25 @@
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
   <style>
     body {
+      margin: 0;
+    }
+
+    .background-container {
+      background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      background-repeat: repeat;
-      margin: 0;
+      background-attachment: fixed;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .stackedit__html {
+      padding-top: 70px;
+      /* Add additional padding to the top to prevent content overlap with the top bar */
     }
 
     .top-bar {
@@ -116,10 +131,8 @@
 
     /* Default background image */
     body.default-theme {
-      background-image: url("https://media.discordapp.net/attachments/620257660121514005/1135405967056588830/IMG_3949.jpg?width=1138&height=663"); 
-      background-size: cover;
-      background-repeat: repeat;
-      background-position: center;
+      background-image: url("https://media.discordapp.net/attachments/620257660121514005/1135405967056588830/IMG_3949.jpg?width=1138&height=663");
+      background-color: #000000;
       color: white;
     }
 
@@ -136,16 +149,24 @@
     }
 
     /* Remove background image for white theme */
-    body.white-theme {
+    body.white-theme .background-container {
       background-image: none;
     }
 
     /* Remove background image for black theme */
-    body.black-theme {
+    body.black-theme .background-container {
       background-image: none;
     }
 
+    /* Update background for smaller screens to repeat */
     @media (max-width: 768px) {
+      .background-container {
+        background-repeat: repeat;
+        background-size: auto;
+        background-position: top;
+        background-attachment: scroll;
+      }
+
       .top-bar {
         padding: 5px;
         flex-direction: column;
@@ -189,6 +210,7 @@
 </head>
 
 <body class="stackedit default-theme">
+  <div class="background-container"></div>
   <div class="top-bar">
     <h1>
       <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135356076389314630/0F3DA5DD-01F9-416B-BE9B-2CF39C4E1D0D.jpg" alt="Ace Speedruns Logo">
@@ -262,11 +284,19 @@
     const defaultTheme = document.getElementById("default-theme");
     const whiteTheme = document.getElementById("white-theme");
     const blackTheme = document.getElementById("black-theme");
+    const backgroundContainer = document.querySelector(".background-container");
 
     // Function to set the theme class on the body element
     function setTheme(theme) {
       document.body.className = `stackedit ${theme}-theme`;
       localStorage.setItem("theme", theme); // Store the selected theme in local storage
+
+      // Update the background image based on the selected theme
+      if (theme === "default") {
+        backgroundContainer.style.backgroundImage = "url('https://media.discordapp.net/attachments/620257660121514005/1135405967056588830/IMG_3949.jpg?width=1138&height=663')";
+      } else {
+        backgroundContainer.style.backgroundImage = "none";
+      }
     }
 
     hamburger.addEventListener("click", () => {
