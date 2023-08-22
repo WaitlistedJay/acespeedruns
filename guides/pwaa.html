@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWAA Guides</title>
+  <link rel="icon" href="https://media.printables.com/media/prints/147688/images/1390622_94f186c1-3fdd-4623-bb19-66928e20f68f/thumbs/inside/1280x960/png/attorneysbadge.webp" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://media.printables.com/media/prints/147688/images/1390622_94f186c1-3fdd-4623-bb19-66928e20f68f/thumbs/inside/1280x960/png/attorneysbadge.webp">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" sizes="192x192" href="https://media.printables.com/media/prints/147688/images/1390622_94f186c1-3fdd-4623-bb19-66928e20f68f/thumbs/inside/1280x960/png/attorneysbadge.webp">
+  <meta name="msapplication-TileImage" content="https://media.printables.com/media/prints/147688/images/1390622_94f186c1-3fdd-4623-bb19-66928e20f68f/thumbs/inside/1280x960/png/attorneysbadge.webp">
+  <meta name="msapplication-TileColor" content="#000000">
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .background-container {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .stackedit__html {
+      padding-top: 70px;
+      /* Add additional padding to the top to prevent content overlap with the top bar */
+    }
+
+    .top-bar {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 5px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar h1 {
+      margin: 0;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-bar img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      display: none;
+    }
+
+    .theme-switch {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .theme-switch input[type="radio"] {
+      display: none;
+    }
+
+    .theme-switch label {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      font-size: 14px;
+    }
+
+    .theme-switch label:hover {
+      background-color: white;
+      color: black;
+    }
+
+    /* White theme buttons */
+    body.white-theme .theme-switch label {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+    }
+
+    body.white-theme .theme-switch label:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .theme-switch input[type="radio"]:checked + label {
+      background-color: white;
+      color: black;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin-right: 5px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid white;
+      border-radius: 5px;
+      display: block;
+    }
+
+    /* Default background image */
+    body.default-theme {
+      background-image: url("https://media.discordapp.net/attachments/620257660121514005/1135405967056588830/IMG_3949.jpg?width=1138&height=663");
+      background-color: #000000;
+      color: white;
+    }
+
+    /* White theme */
+    body.white-theme {
+      background-color: #ffffff;
+      color: black;
+    }
+
+    /* Black theme */
+    body.black-theme {
+      background-color: #000000;
+      color: white;
+    }
+
+    /* Remove background image for white theme */
+    body.white-theme .background-container {
+      background-image: none;
+    }
+
+    /* Remove background image for black theme */
+    body.black-theme .background-container {
+      background-image: none;
+    }
+
+    /* Update background for smaller screens to repeat */
+    @media (max-width: 768px) {
+      .background-container {
+        background-repeat: repeat;
+        background-size: auto;
+        background-position: top;
+        background-attachment: scroll;
+      }
+
+      .top-bar {
+        padding: 5px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hamburger {
+        display: block;
+        font-size: 24px;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      /* Center theme buttons on smaller screens */
+      .theme-switch {
+        justify-content: center;
+      }
+
+      /* Images for smaller screens */
+      .stackedit__html img {
+        max-width: 100%;
+      }
+    }
+
+    /* Images for larger screens */
+    @media (min-width: 769px) {
+      .stackedit__html img {
+        max-width: 70%; /* Change the size of the image */
+        display: block;
+        margin: 0 auto; /* Center the image horizontally */
+      }
+    }
+  </style>
+</head>
+
+<body class="stackedit default-theme">
+  <div class="background-container"></div>
+  <div class="top-bar">
+    <h1>
+      <img src="https://cdn.discordapp.com/attachments/620257660121514005/1135356076389314630/0F3DA5DD-01F9-416B-BE9B-2CF39C4E1D0D.jpg" alt="Ace Speedruns Logo">
+      Ace Speedruns
+    </h1>
+    <div class="hamburger">&#9776;</div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="https://www.speedrun.com/series/ace_attorney" target="_blank">SRC</a></li>
+        <li><a href="https://discord.gg/xKWQnJBdWv" target="_blank">Discord</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="theme-switch">
+    <input type="radio" name="theme" id="default-theme" checked>
+    <label for="default-theme">Default</label>
+
+    <input type="radio" name="theme" id="white-theme">
+    <label for="white-theme">White</label>
+
+    <input type="radio" name="theme" id="black-theme">
+    <label for="black-theme">Black</label>
+  </div>
+
+ <div class="stackedit">
+  <div class="stackedit__html"><h1 id="phoenix-wright-ace-attorney-speedrun-guides">Phoenix Wright: Ace Attorney Speedrun Guides</h1>
+<p><a href="/guides/pwaa/allcases">All Cases NG+ Route Notes by indykenobi</a></p>
+<p><a href="/guides/pwaa/dialogue">Guide for skipping dialogue much faster (PC) by TheJayJay</a></p>
+<p><a href="/guides/pwaa/allcasestrilogy">PS4, XB1, Switch, PC All Cases NG+ Route Notes by Splicerchild</a></p>
+<p>These guides can also be found on <a href="https://www.speedrun.com/pwaa/guides">speedrun.com.</a></p>
+</div>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navList = document.querySelector("nav");
+    const defaultTheme = document.getElementById("default-theme");
+    const whiteTheme = document.getElementById("white-theme");
+    const blackTheme = document.getElementById("black-theme");
+    const backgroundContainer = document.querySelector(".background-container");
+
+    // Function to set the theme class on the body element
+    function setTheme(theme) {
+      document.body.className = `stackedit ${theme}-theme`;
+      localStorage.setItem("theme", theme); // Store the selected theme in local storage
+
+      // Update the background image based on the selected theme
+      if (theme === "default") {
+        backgroundContainer.style.backgroundImage = "url('https://media.discordapp.net/attachments/620257660121514005/1135405967056588830/IMG_3949.jpg?width=1138&height=663')";
+      } else {
+        backgroundContainer.style.backgroundImage = "none";
+      }
+    }
+
+    hamburger.addEventListener("click", () => {
+      navList.classList.toggle("show");
+    });
+
+    // Hide the navigation bar when a link is clicked
+    const navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navList.classList.remove("show");
+      });
+    });
+
+    // Handle theme switch change
+    defaultTheme.addEventListener("change", () => {
+      setTheme("default");
+    });
+
+    whiteTheme.addEventListener("change", () => {
+      setTheme("white");
+    });
+
+    blackTheme.addEventListener("change", () => {
+      setTheme("black");
+    });
+
+    // Retrieve the theme preference from local storage on page load
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  </script>
+</body>
+
+</html>
